@@ -2,12 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-function createToken(user_id) {
-    return jwt.sign(
-        { user_id },
-        process.env.TOKEN_KEY,
-        { expiresIn: '24h' }
-    );
+function createToken(user_id) { 
+    return jwt.sign({ user_id }, process.env.TOKEN_KEY, { expiresIn: '24h' });
 }
 function authResponse(user_id, user_name, user_email, user_token) {
     return { user_id, user_name, user_email, user_token }
