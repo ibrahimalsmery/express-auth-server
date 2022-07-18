@@ -1,11 +1,28 @@
-# express-auth-server
+    npm i 
+
+    npm run dev 
+
  
-**npm i 
 
-**npm run dev
-
-**http://localhost:3333/**
-**http://localhost:3333/auth/register**
-**http://localhost:3333/auth/login**
-//protected with middleware 
-**http://localhost:3333/user**
+ [POST] ***/auth/register*** 
+ {
+	"user_name":"name",
+	"user_email":"email@gmail.com",
+	"user_pwd":"pwd"
+}
+ [POST] ***/auth/login***
+ {
+	"user_email":"email@gmail.com" ,
+	"user_pwd":"pwd"
+}  
+ [GET] ***/user***
+ **[header]** 
+ { 
+	 'user-access-token' : 'TOKEN'
+  }
+  **OR add token in url**
+  /user?token=userToken
+  OR in POST Body
+  {
+	  token:'token'
+  }
