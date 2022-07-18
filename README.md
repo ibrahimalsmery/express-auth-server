@@ -27,8 +27,8 @@
       }
 
   **OR add token in url**
-  /user?token=userToken
-  OR in POST Body
+  /user?**token=userToken**
+  OR in **POST Body**
 
       {
     	  token:'token'
